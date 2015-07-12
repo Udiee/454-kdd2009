@@ -122,7 +122,8 @@ library(glmnet)
 lreg.cv <- cv.glmnet(df_mat[train_ind,], factor(train$churn), family = "binomial",
                      nfolds = 10, type.measure = 'auc')
 # view the Area Under the Curve for different values of lambda.
-plot(lreg.cv, main = 'Cross Validation Curve Logistic Regression')
+plot(lreg.cv)
+title( main = 'Cross Validation Curve Logistic Regression',line =+2.8)
 ```
 This plot shows that not all the variables are useful for classification. Two vertical lines in this plot represent the model with the best performance and the most regularized model within one standard deviation of the top performer. Performance is measured on out of sample data. The regularized and cross validated logistic regression selected a model with 155 non-zero variables
 <br>
